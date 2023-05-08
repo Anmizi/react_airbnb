@@ -18,7 +18,7 @@ const IconMenu = memo(() => {
         overflow: "visible",
       }}
     >
-      <g fill="none" fillrule="nonzero">
+      <g fill="none" fillRule="nonzero">
         <path d="m2 16h28" />
         <path d="m2 24h28" />
         <path d="m2 8h28" />
