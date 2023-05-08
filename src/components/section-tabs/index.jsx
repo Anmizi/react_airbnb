@@ -1,3 +1,4 @@
+import ScrollView from "@/base-ui/scroll-view";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import React, { memo, useState } from "react";
@@ -12,17 +13,19 @@ const SectionTabs = memo((props) => {
   };
   return (
     <TabsWrapper>
-      {tabsName?.map((name, idx) => {
-        return (
-          <div
-            key={idx}
-            className={classNames(["item", { active: currentIdx === idx }])}
-            onClick={() => handleClickItem(idx, name)}
-          >
-            {name}
-          </div>
-        );
-      })}
+      <ScrollView>
+        {tabsName?.map((name, idx) => {
+          return (
+            <div
+              key={idx}
+              className={classNames(["item", { active: currentIdx === idx }])}
+              onClick={() => handleClickItem(idx, name)}
+            >
+              {name}
+            </div>
+          );
+        })}
+      </ScrollView>
     </TabsWrapper>
   );
 });

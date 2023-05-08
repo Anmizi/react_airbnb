@@ -6,14 +6,16 @@ import HomeSectionV1 from "./c-cpns/home-section-v1";
 import HomeSectionV2 from "./c-cpns/home-section-v2";
 import { HomeWrapper } from "./style";
 const Home = memo(() => {
-  const { goodPriceInfo, highScoreInfo, discountInfo } = useSelector(
-    (state) => ({
-      goodPriceInfo: state.home.goodPrice,
-      highScoreInfo: state.home.highScore,
-      discountInfo: state.home.discount,
-    }),
-    shallowEqual
-  );
+  const { goodPriceInfo, highScoreInfo, discountInfo, hotRecommendInfo } =
+    useSelector(
+      (state) => ({
+        goodPriceInfo: state.home.goodPrice,
+        highScoreInfo: state.home.highScore,
+        discountInfo: state.home.discount,
+        hotRecommendInfo: state.home.hotRecommend,
+      }),
+      shallowEqual
+    );
 
   // 派发事件，发送请求
   const dispatch = useDispatch();
@@ -26,6 +28,9 @@ const Home = memo(() => {
       <div className="content">
         {Object.keys(discountInfo).length > 0 && (
           <HomeSectionV2 initData={discountInfo} />
+        )}
+        {Object.keys(hotRecommendInfo).length > 0 && (
+          <HomeSectionV2 initData={hotRecommendInfo} />
         )}
         <HomeSectionV1 initData={goodPriceInfo} />
         <HomeSectionV1 initData={highScoreInfo} />

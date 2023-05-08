@@ -17,3 +17,9 @@ export const getHomeDiscountData = () => {
     url: "/home/discount",
   });
 };
+
+export const getHomeHotRecommendest = () => {
+  return httpRequest.get({
+    url: "/home/hotrecommenddest",
+  });
+};
