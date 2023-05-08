@@ -1,13 +1,13 @@
 const theme = {
   color: {
     primaryColor: "#ff385c",
-    secondaryColor: "00848a",
+    secondaryColor: "#00848a",
   },
   textColor: {
     primaryColor: "#484848",
     secondaryColor: "#222",
   },
-  minxin: {
+  mixin: {
     boxShadow: `
     transition: box-shadow 250ms ease;
     &:hover {

@@ -11,3 +11,9 @@ export const getHomeHighScoreData = () => {
     url: "/home/highscore",
   });
 };
+
+export const getHomeDiscountData = () => {
+  return httpRequest.get({
+    url: "/home/discount",
+  });
+};

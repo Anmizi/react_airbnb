@@ -34,6 +34,6 @@ export const RightWrapper = styled.div`
     .menu {
       margin-right: 10px;
     }
-    ${(props) => props.theme.minxin.boxShadow}
+    ${(props) => props.theme.mixin.boxShadow}
   }
 `;

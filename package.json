@@ -7,6 +7,7 @@
     "@mui/styled-engine-sc": "^5.12.0",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
+    "classnames": "^2.3.2",
     "craco-less": "^2.0.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
