@@ -23,3 +23,8 @@ export const getHomeHotRecommendest = () => {
     url: "/home/hotrecommenddest",
   });
 };
+export const getHomeLongForData = () => {
+  return httpRequest.get({
+    url: "/home/longfor",
+  });
+};

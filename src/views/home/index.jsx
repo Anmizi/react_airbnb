@@ -2,20 +2,27 @@ import { fetchHomeDataAction } from "@/store/modules/home";
 import React, { memo, useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import HomeBanner from "./c-cpns/home-banner";
+import HomeLongfor from "./c-cpns/home-longfor";
 import HomeSectionV1 from "./c-cpns/home-section-v1";
 import HomeSectionV2 from "./c-cpns/home-section-v2";
 import { HomeWrapper } from "./style";
 const Home = memo(() => {
-  const { goodPriceInfo, highScoreInfo, discountInfo, hotRecommendInfo } =
-    useSelector(
-      (state) => ({
-        goodPriceInfo: state.home.goodPrice,
-        highScoreInfo: state.home.highScore,
-        discountInfo: state.home.discount,
-        hotRecommendInfo: state.home.hotRecommend,
-      }),
-      shallowEqual
-    );
+  const {
+    goodPriceInfo,
+    highScoreInfo,
+    discountInfo,
+    hotRecommendInfo,
+    longforInfo,
+  } = useSelector(
+    (state) => ({
+      goodPriceInfo: state.home.goodPrice,
+      highScoreInfo: state.home.highScore,
+      discountInfo: state.home.discount,
+      hotRecommendInfo: state.home.hotRecommend,
+      longforInfo: state.home.longfor,
+    }),
+    shallowEqual
+  );
 
   // 派发事件，发送请求
   const dispatch = useDispatch();
@@ -26,6 +33,7 @@ const Home = memo(() => {
     <HomeWrapper>
       <HomeBanner />
       <div className="content">
+        <HomeLongfor initData={longforInfo} />
         {Object.keys(discountInfo).length > 0 && (
           <HomeSectionV2 initData={discountInfo} />
         )}
