@@ -5,6 +5,7 @@ import HomeBanner from "./c-cpns/home-banner";
 import HomeLongfor from "./c-cpns/home-longfor";
 import HomeSectionV1 from "./c-cpns/home-section-v1";
 import HomeSectionV2 from "./c-cpns/home-section-v2";
+import HomeSectionV3 from "./c-cpns/home-section-v3";
 import { HomeWrapper } from "./style";
 const Home = memo(() => {
   const {
@@ -13,6 +14,7 @@ const Home = memo(() => {
     discountInfo,
     hotRecommendInfo,
     longforInfo,
+    plusInfo,
   } = useSelector(
     (state) => ({
       goodPriceInfo: state.home.goodPrice,
@@ -20,6 +22,7 @@ const Home = memo(() => {
       discountInfo: state.home.discount,
       hotRecommendInfo: state.home.hotRecommend,
       longforInfo: state.home.longfor,
+      plusInfo: state.home.plus,
     }),
     shallowEqual
   );
@@ -42,6 +45,7 @@ const Home = memo(() => {
         )}
         <HomeSectionV1 initData={goodPriceInfo} />
         <HomeSectionV1 initData={highScoreInfo} />
+        <HomeSectionV3 initData={plusInfo} />
       </div>
     </HomeWrapper>
   );
