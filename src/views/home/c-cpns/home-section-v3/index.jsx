@@ -1,5 +1,6 @@
 import ScrollView from "@/base-ui/scroll-view";
 import RoomItem from "@/components/room-item";
+import SectionFooter from "@/components/section-footer";
 import SectionHeader from "@/components/section-header";
 import PropTypes from "prop-types";
 import React, { memo } from "react";
@@ -14,6 +15,8 @@ const HomeSectionV3 = memo((props) => {
           return <RoomItem itemData={item} itemWidth="20%" key={item.id} />;
         })}
       </ScrollView>
+
+      <SectionFooter name="Plus" />
     </SectionWrapper>
   );
 });
