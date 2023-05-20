@@ -16,7 +16,7 @@ export const changeRoomListAction = (roomList) => {
 export const fetchRoomListAction = () => {
   return (dispatch) => {
     const currentPage = store.getState().entire.currentPage;
-    getEntireRoomList(currentPage * 20).then((res) => {
+    getEntireRoomList((currentPage - 1) * 20).then((res) => {
       dispatch(changeRoomListAction(res.list));
       dispatch(changeTotalCountAction(res.totalCount));
     });

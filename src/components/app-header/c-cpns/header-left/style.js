@@ -6,5 +6,6 @@ export const LeftWrapper = styled.div`
     display: inline-block;
     margin-left: 30px;
     color: ${(props) => props.theme.color.primaryColor};
+    cursor: pointer;
   }
 `;
