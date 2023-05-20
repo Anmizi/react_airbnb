@@ -2,6 +2,7 @@ import { fetchRoomListAction } from "@/store/modules/entire/actionsCreators";
 import React, { memo, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import EntireFilter from "./c-cpns/entire-filter";
+import EntireRooms from "./c-cpns/entire-rooms";
 import { EntireWrapper } from "./style";
 
 const Entire = memo(() => {
@@ -12,6 +13,7 @@ const Entire = memo(() => {
   return (
     <EntireWrapper>
       <EntireFilter />
+      <EntireRooms />
     </EntireWrapper>
   );
 });
