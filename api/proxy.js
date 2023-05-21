@@ -1,5 +1,5 @@
 import { createProxyMiddleware } from "http-proxy-middleware";
-export default function (req, res) {
+module.exports = function (req, res) {
   let target = "";
   if (req.target.startsWith("/api")) {
     target = "http://codercba.com:1888/airbnb/api";
@@ -11,4 +11,4 @@ export default function (req, res) {
       "^/api": "",
     },
   })(req, res);
-}
+};
