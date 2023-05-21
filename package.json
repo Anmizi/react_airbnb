@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^7.1.0"
+    "@craco/craco": "^7.1.0",
+    "http-proxy-middleware": "^2.0.6"
   }
 }
