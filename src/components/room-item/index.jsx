@@ -8,7 +8,7 @@ import IconArrowRight from "@/assets/svg/icon_arrow_right";
 import Indicator from "@/base-ui/indicator";
 import classNames from "classnames";
 const RoomItem = memo((props) => {
-  const { itemData, itemWidth = "25%" } = props;
+  const { itemData, itemWidth = "25%", handleClickItem } = props;
   const [selectIdx, setSelectIdx] = useState(0);
   const sliderRef = useRef();
 
@@ -70,10 +70,14 @@ const RoomItem = memo((props) => {
       </div>
     </div>
   );
+  const handleClick = (item) => {
+    if (handleClickItem) handleClickItem(item);
+  };
   return (
     <ItemWrapper
       verifycolor={itemData?.verify_info?.text_color || "#39576a"}
       itemwidth={itemWidth}
+      onClick={() => handleClick(itemData)}
     >
       <div className="inner">
         {!itemData?.picture_urls ? pictureElement : sliderElement}

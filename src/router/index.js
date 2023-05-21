@@ -2,7 +2,6 @@ import { Navigate } from "react-router-dom";
 import React from "react";
 const Home = React.lazy(() => import("@/views/home"));
 const Entire = React.lazy(() => import("@/views/entire"));
-const Detail = React.lazy(() => import("@/views/detial"));
 const routes = [
   {
     path: "/",
@@ -15,10 +14,6 @@ const routes = [
   {
     path: "/entire",
     element: <Entire />,
-  },
-  {
-    path: "/detail",
-    element: <Detail />,
   },
 ];
 

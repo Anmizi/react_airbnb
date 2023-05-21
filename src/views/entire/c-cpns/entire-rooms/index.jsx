@@ -8,6 +8,7 @@ const EntireRooms = memo(() => {
     totalCount: state.entire.totalCount,
     isLoading: state.entire.isLoading,
   }));
+
   return (
     <RoomsWrapper>
       <h1 className="title">{totalCount}多处住所</h1>
