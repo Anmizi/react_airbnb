@@ -62,6 +62,32 @@ export const ItemWrapper = styled.li`
           }
         }
       }
+      .indicator {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        width: 30%;
+        transform: translateX(-50%);
+        .dot_item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20%;
+        }
+        .dot {
+          border-radius: 50%;
+          width: 6px;
+          height: 6px;
+          background-color: rgba(0, 0, 0, 0.8);
+          margin: 0 2px;
+          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+          &.active {
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+          }
+        }
+      }
     }
     .desc {
       margin: 10px 0 5px;
