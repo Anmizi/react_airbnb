@@ -13,12 +13,20 @@ export const changeRoomListAction = (roomList) => {
     roomList,
   };
 };
+export const changeIsLoading = (isLoading) => {
+  return {
+    type: actionTypes.CHANGE_IS_LOADING,
+    isLoading,
+  };
+};
 export const fetchRoomListAction = () => {
   return (dispatch) => {
     const currentPage = store.getState().entire.currentPage;
+    dispatch(changeIsLoading(true));
     getEntireRoomList((currentPage - 1) * 20).then((res) => {
       dispatch(changeRoomListAction(res.list));
       dispatch(changeTotalCountAction(res.totalCount));
+      dispatch(changeIsLoading(false));
     });
   };
 };

@@ -16,6 +16,11 @@ const EntirePagination = memo(() => {
   const startCount = (currentPage - 1) * 20 + 1;
   const endCount = startCount + 19;
   const handleChange = (e, val) => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
     dispatch(changeCurrentPageAction(val));
     dispatch(fetchRoomListAction());
   };

@@ -3,9 +3,10 @@ import React, { memo } from "react";
 import { useSelector } from "react-redux";
 import { RoomsWrapper } from "./style";
 const EntireRooms = memo(() => {
-  const { roomList, totalCount } = useSelector((state) => ({
+  const { roomList, totalCount, isLoading } = useSelector((state) => ({
     roomList: state.entire.roomList,
     totalCount: state.entire.totalCount,
+    isLoading: state.entire.isLoading,
   }));
   return (
     <RoomsWrapper>
@@ -15,6 +16,7 @@ const EntireRooms = memo(() => {
           return <RoomItem itemData={item} itemWidth="20%" key={item._id} />;
         })}
       </div>
+      {isLoading && <div className="cover"></div>}
     </RoomsWrapper>
   );
 });

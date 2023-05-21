@@ -7,6 +7,8 @@ import theme from "./assets/theme";
 import App from "@/App";
 import "normalize.css";
 import "@/assets/css/index.less";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import store from "./store";
 import { ThemeProvider, THEME_ID, createTheme } from "@mui/material/styles";
 const root = ReactDOM.createRoot(document.getElementById("root"));

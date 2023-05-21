@@ -3,6 +3,7 @@ const initState = {
   currentPage: 1,
   roomList: [],
   totalCount: 0,
+  isLoading: false,
 };
 const reducer = (state = initState, action) => {
   switch (action.type) {
@@ -12,6 +13,8 @@ const reducer = (state = initState, action) => {
       return { ...state, roomList: action.roomList };
     case actionTypes.CHANGE_TOTAL_COUNT:
       return { ...state, totalCount: action.totalCount };
+    case actionTypes.CHANGE_IS_LOADING:
+      return { ...state, isLoading: action.isLoading };
     default:
       return state;
   }
